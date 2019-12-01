@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-// Comment
 
 export class SideNavigation extends Component {
     render() {
@@ -9,6 +9,7 @@ export class SideNavigation extends Component {
             <div>
                 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                 
+                {/* Logo and Name */}
                 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                     <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
@@ -16,41 +17,42 @@ export class SideNavigation extends Component {
                     <div class="sidebar-brand-text mx-3">Issue Tracker</div>
                 </a>
 
-                
+                {/* Divider */}
                 <hr class="sidebar-divider my-0" />
 
                 
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <Link className="nav-link" to="/dashboard">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </Link>
                 </li>
 
-                
+                {/* Divider */}
                 <hr class="sidebar-divider" />
 
                 
                 <div class="sidebar-heading">
-                    Interface
+                    Issues
                 </div>
 
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                    </a>
+                    <Link className="nav-link" to="/tickets">
+                        <i class="fas fa-fw fa-file-alt"></i>
+                        <span>Tickets</span>
+                    </Link>
                 </li>
 
                 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
-                    </a>
+                    <Link className="nav-link" to="/projects">
+                        <i class="fas fa-fw fa-star"></i>
+                        <span>Projects</span>
+                    </Link>
                 </li>
 
-                
+                {/* Divider */}
                 <hr class="sidebar-divider" />
 
                 

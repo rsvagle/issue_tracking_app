@@ -25,7 +25,6 @@ export class TicketPanel extends Component {
             <React.Fragment>
                 {/* <!-- Content Column --> */}
                 <div class="col-lg-4 mb-4">
-
                     {/* <!-- Ticket Type Card --> */}
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">

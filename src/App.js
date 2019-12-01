@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import SideNavigation from './components/layout/SideNavigation';
 import TopHeader from './components/layout/TopHeader';
@@ -12,33 +12,44 @@ import ViewTicket from './components/ViewTicket';
 import CreateTicket from './components/CreateTicket';
 
 
-function App() {
-  return (
-    <Router >
-      <div className="App">
-        <div id="wrapper">
-          <SideNavigation />
-          <div id="content-wrapper">
-            <div id="content">
-              <TopHeader />
+class App extends Component{
 
-              {/* PAGE CONTENT */}
-              <div class="container-fluid">
-                <Route exact path="/" component={Home} />
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/tickets" component={Tickets} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/login" component={Login} />
-                <Route path="/contact" component={ContactForm} />
-                <Route path="/view_ticket" component={ViewTicket} />
-                <Route path="/create_ticket" component={CreateTicket} />
+  state = {
+    userInfo:{
+      loggedIn: false,
+      userId: '',
+      username: ''
+    }
+  }
+
+  render(){
+    return (
+      <Router >
+        <div className="App">
+          <div id="wrapper">
+          <SideNavigation />
+            <div id="content-wrapper">
+              <div id="content">
+                <TopHeader />
+
+                {/* PAGE CONTENT */}
+                <div class="container-fluid">
+                  <Route exact path="/" component={Home} />
+                  <Route path="/dashboard" component={Dashboard} />
+                  <Route exact path="/tickets" component={Tickets} />
+                  <Route path="/projects" component={Projects} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/contact" component={ContactForm} />
+                  <Route path="/tickets/:tickethandle" component={ViewTicket} />
+                  <Route path="/create_ticket" component={CreateTicket} />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </Router>
-  );
+      </Router>
+    );
+  }
 }
 
 export default App;

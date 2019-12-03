@@ -11,7 +11,7 @@ export class Tickets extends Component {
     }
 
     componentDidMount(){
-        axios.get(/api/ticket/read.php)
+        axios.get(api/ticket/read.php)
             .then(res => this.setState({tickets : res.data}));
     }
 

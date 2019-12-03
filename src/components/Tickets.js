@@ -1,22 +1,49 @@
 import React, { Component } from 'react';
 import TicketPanel from './TicketPanel';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 export class Tickets extends Component {
 
     state = {
-        tickets : []
+        tickets : [
+            {
+                id: 7,
+                status: 'open',
+                title: 'Bug 1',
+                description: 'Theres a problem in blah blah blah',
+                author: 'Dev 1',
+                category: 'Back end',
+                createdAt: '11-30-2019',
+            },
+            {
+                id: 2,
+                status: 'in progress',
+                title: 'Bug 2',
+                description: 'Found a bug in the dashboard',
+                author: 'Dev 1',
+                category: 'Back end',
+                createdAt: '11-30-2019',
+            },
+            {
+                id: 1,
+                status: 'in progress',
+                title: 'Bug 4',
+                description: 'Found a bug in the tickets page',
+                author: 'Dev 1',
+                category: 'Back end',
+                createdAt: '11-30-2019',
+            },
+            {
+                id: 4,
+                status: 'closed',
+                title: 'Bug 3',
+                description: 'Hard time finding the ',
+                author: 'Dev 1',
+                category: 'Back end',
+                createdAt: '11-30-2019',
+            }
+        ]
     }
-
-    componentDidMount() {
-        const url = '/api/ticket/read.php'
-        axios.get(url).then(response => response.data)
-        .then((data) => {
-            console.log(data)
-          this.setState({ tickets: data })
-         })
-      }
 
     getOpenTickets = () => {
         return this.state.tickets.filter(ticket => (ticket.status === 'open'));

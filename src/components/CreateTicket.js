@@ -20,15 +20,19 @@ export class CreateTicket extends Component {
                         <form className="user" action="/action_page.php">
                             <div className="form-group">
                                 <label>Title</label>
-                                <input type="text" className="form-control" id="fname" name="firstname" placeholder="Enter your title..." />
+                                <input type="text" className="form-control" id="title" name="title" placeholder="Enter your title..." />
                             </div>
                             <div className="form-group"> 
                                 <label>Category</label>
-                                <input type="email" className="form-control" id="email" name="email" placeholder="Enter your category..." />
+                                <input type="text" className="form-control" id="category" name="category_id" placeholder="Enter your category..." />
                             </div>
                             <div className="form-group">    
                                 <label>Description</label>
-                                <textarea id="subject" className="form-control" name="subject" placeholder="Describe your issue..."></textarea>
+                                <textarea id="description" className="form-control" name="description" placeholder="Describe your issue..."></textarea>
+                            </div>
+                            <div className="form-group">    
+                                <label>Assigned_dev_id</label>
+                                <textarea id="assigned_dev_id" className="form-control" name="assigned_dev_id" placeholder="Describe your issue..."></textarea>
                             </div>
                     
                             <input type="submit" value="Submit" className="btn btn-danger"/>
